@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="itemUser"
+            type="com.example.a10620225.mvvmsample.viewModel.ItemUserViewModel"/>
+    </data>
+    
+    <android.support.v7.widget.CardView
+        app:cardElevation="5dp"
+        android:layout_margin="20dp"
+        android:id="@+id/item_people"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image_people"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                imageUrl="@{itemUser.gerProfileThumb()}"/>
+            <TextView
+                android:id="@+id/label_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{itemUser.fullName}"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/colorAccent"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                />
+            <TextView
+                android:id="@+id/label_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@{itemUser.cell}"
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:id="@+id/label_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@{itemUser.email}"
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="15sp"
+                />
+
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>
